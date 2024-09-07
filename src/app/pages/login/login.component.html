@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <form [formGroup]="form" class="form" (ngSubmit)="login(form.value)">
+        <h1 class="mb-3">Welcome to Dev Forum!</h1>
+        <p class="mb-5 text-center">
+          Login to interact with other developers around the globe.
+        </p>
+        <div class="col-9 col-md-6 mb-3">
+          <div class="input-group">
+            <span class="input-group-text" id="username"
+              ><i class="fa-solid fa-user"></i
+            ></span>
+            <input
+              type="email"
+              class="form-control round-border-right"
+              formControlName="emailAddress"
+              placeholder="Username"
+              aria-label="Username"
+            />
+          </div>
+          @if(form.controls['emailAddress'].errors && isFormSubmitted){
+          <div class="error round-border-all">
+            {{
+              form.controls["emailAddress"].hasError("email")
+                ? "It must be a valid email address."
+                : form.controls["emailAddress"].hasError("required")
+                ? "Email is required."
+                : ""
+            }}
+          </div>
+          }
+        </div>
+        <div class="col-9 col-md-6 mb-3">
+          <div class="input-group">
+            <span class="input-group-text" id="password"
+              ><i class="fa-solid fa-lock"></i
+            ></span>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control"
+              formControlName="password"
+              placeholder="Password"
+              aria-label="Password"
+            />
+            <span class="input-group-text" id="password">
+              @if(!showPassword){
+              <i
+                class="fa-solid fa-eye"
+                (click)="showPassword = !showPassword"
+              ></i>
+              }@else {
+              <i
+                class="fa-solid fa-eye-slash"
+                (click)="showPassword = !showPassword"
+              ></i>
+              }
+            </span>
+          </div>
+          @if(form.controls['password'].errors && isFormSubmitted){
+          <div class="error round-border-all">Password is required.</div>
+          }
+        </div>
+        <div class="d-grid gap-2 col-9 col-md-6 mx-auto mt-2 mb-2">
+          <button type="submit" class="btn btn-block">Submit</button>
+          <a class="text-end mt-1">Forgot password?</a>
+        </div>
+        <hr />
+        <div class="d-grid gap-2 col-9 col-md-6 mx-auto mt-2">
+          <button type="button" class="btn btn-block signup">
+            <i class="fa-solid fa-envelope me-2"></i>
+            Sign up with Email
+          </button>
+        </div>
+        <div class="d-grid gap-2 col-9 col-md-6 mx-auto mt-2">
+          <button type="button" class="btn btn-block signup">
+            <i class="fa-brands fa-facebook me-2"></i>
+            Sign up with Facebook
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6 col-sm-12 img-container">
+      <img
+        height="100%"
+        width="100%"
+        src="assets/img/Online Forum.jpg"
+        alt="Online Forum"
+      />
+    </div>
+  </div>
+</div>

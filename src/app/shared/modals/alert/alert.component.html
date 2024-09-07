@@ -1,0 +1,9 @@
+<div class="modal-body" id="modal">
+  <h2 class="mb-4">{{ title }}</h2>
+  @if(isSuccess){
+  <i class="fa-solid fa-circle-check success"></i>
+  } @else{
+  <i class="fa-solid fa-triangle-exclamation danger"></i>
+  }
+  <p>{{ message }}</p>
+</div>

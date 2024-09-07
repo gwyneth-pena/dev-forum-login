@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; padding: 0; box-sizing: border-box}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+
+.col-md-6{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.round-border-right{
+    border-top-right-radius: 6px !important;
+    border-bottom-right-radius: 6px !important;
+}
+
+.round-border-all{
+    border-radius: 6px !important;
+}

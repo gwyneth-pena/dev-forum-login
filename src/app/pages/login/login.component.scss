@@ -1,0 +1,74 @@
+@use "../../../assets/scss/variables.scss";
+
+.form{
+    background-color: variables.$primary-color;
+    color: #fff;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 0 18px;
+    display: flex;
+    flex-direction: column;
+
+    button{
+        background-color: variables.$secondary-color;
+        color: #fff;
+    }
+
+    button:hover{
+        opacity: 0.7;
+    }
+
+    .fa-eye, .fa-eye-slash{
+        color: rgb(151, 151, 151);
+        cursor: pointer;
+    }
+
+    .error{
+        background-color: #f6bbbb;
+        border: 1px solid red;
+        color: red;
+        padding: 2px 8px;
+        margin: 4px 0;
+        font-size: .8em;
+    }
+
+    a{
+        font-size: .9rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .signup{
+        background-color: rgb(222, 222, 222);
+        color: variables.$secondary-color;
+
+        i{
+            font-size: 1.3rem;
+        }
+    }
+    hr{
+        background-color: #fff;
+        height: 1px;
+        width: 75%;
+    }
+}
+
+.img-container{
+    height: 100vh;
+}
+
+@media screen and (max-width:576px) {
+
+    .w-sm-75 {
+        width: 75% !important;
+    }
+}
+
+@media screen and (max-width:712px) {
+    .img-container {
+        display: none;
+    }
+
+}
